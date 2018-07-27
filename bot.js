@@ -6,8 +6,7 @@ const random = require("random-js")(); // uses the nativeMath engine
 // Create an instance of a Discord client
 const client = new Discord.Client();
 
-// The token of your bot - https://discordapp.com/developers/applications/me
-const token = 'BOT TOKEN GOES HERE';
+
 
 // The ready event is vital, it means that your bot will only start reacting to information
 // from Discord _after_ ready is emitted
@@ -133,5 +132,6 @@ function createCommand(commandText, commandExists, commandName) {
     }
 }
 
-// Log our bot in
-client.login(token);
+// THIS  MUST  BE  THIS  WAY
+
+client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
